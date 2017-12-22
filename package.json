@@ -8,15 +8,21 @@
     "start": "electron .",
     "text": "xvfb-maybe electron-mocha main.js",
     "pack": "build --dir",
-    "dist": "build"
+    "dist": "build -mwl"
   },
   "build": {
     "appId": "toinane.colorpicker",
     "mac": {
       "category": "toinane.app.design"
     },
-    "win": {
-      "iconUrl": "logo.png"
+    "linux": {
+      "target": "snap"
+    },
+    "snap": {
+      "plugs": [
+        "default",
+        "desktop"
+      ]
     }
   },
   "repository": "https://github.com/toinane/colorpicker",
@@ -27,7 +33,8 @@
     "crea-that"
   ],
   "devDependencies": {
-    "electron": "^1.6.1"
+    "electron": "^1.6.1",
+    "electron-builder": "^19.45.5"
   },
   "author": "Toinane",
   "homepage": "https://toinane.crea-th.at",
